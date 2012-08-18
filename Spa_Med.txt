@@ -1,0 +1,77 @@
+Create Table Funcionarios(
+   CodFuncionario Integer Not Null,
+   Funcao Char,
+   Nome Char(40),
+   RG Integer Not Null,
+   CPF Char(11) Not Null,
+   Endereco VarChar(50),
+   Cidade Char(20),
+   Estado Char(2),
+   Bairro Char(15),
+   Cep Integer,
+   Telefone1 Char(11),
+   Telefone2 Char(11),
+   Primary Key (RG))
+___________________________________
+
+Create Table FuncionariosMedico(
+   CodFuncionario Integer Not Null,
+   Funcao Char,
+   CRM Integer,
+   Nome Char(40),
+   RG Integer Not Null,
+   CPF Char(11) Not Null,
+   Endereco VarChar(50),
+   Cidade Char(20),
+   Estado Char(2),
+   Bairro Char(15),
+   Cep Integer,
+   Telefone1 Char(11),
+   Telefone2 Char(11),
+   Primary Key (CRM))
+___________________________________
+
+Create Table Pacientes(
+  CodPaciente Integer Not Null,
+  NomePaciente Char(40),
+  RG Integer Not Null,
+  CPF Char(11) Not Null,
+  Profissao VarChar,
+  Endereco VarChar(50),
+  Cidade Char(20),
+  Estado Char(2),
+  Bairro Char(15),
+  Cep Integer,
+  Telefone1 Char(11),
+  Telefone2 Char(11),
+  Primary Key (CodPaciente))
+___________________________________
+
+Create Table Exames(
+  CodExame Integer Not Null,
+  NomeDoExame Char,
+  RG Integer Not Null,
+  Primary Key (CodExame))
+___________________________________
+
+Create Table AvaliacaoMedica(
+  CodPaciente Integer Not Null,
+  CRM Integer Not Null,
+  NomePaciente Char,
+  RGPaciente Integer,
+  IMC Integer,
+  Indices VarChar,
+  Observacao VarChar,
+  Primary Key (CodPaciente))
+___________________________________
+
+ALTER TABLE Exames
+      ADD FOREIGN KEY(RG) REFERENCES Funcionarios
+
+
+ALTER TABLE AvaliacaoMedica
+      ADD FOREIGN KEY(CodPaciente) REFERENCES Pacientes
+
+
+ALTER TABLE AvaliacaoMedica
+      ADD FOREIGN KEY(CRM) REFERENCES FuncionariosMedico
