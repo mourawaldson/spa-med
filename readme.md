@@ -1,3 +1,11 @@
-Projeto final do 1º período no CTD (Curso Técnico de Desenvolvimento de Software) na disciplina LAD (Lógica Aplicada ao Desenvolvimento).
+## Info
+Academic project in 1st period 2006 / Technical Course in Software Development
 
-Desenvolvido em Delphi armazenando os dados em Vetor. =)
+LAD (Lógica Aplicada ao Desenvolvimento).
+
+Developed in Delphi with Vector.
+
+## Credits
+[Miquéias Lopes](mailto:miqueias.lopes@gmail.com)
+
+[Waldson Moura](mailto:mourawaldson@gmail.com)
